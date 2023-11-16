@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="deptBean" class="com.mycompany.app.Department">
+        <property name="deptName" value="Finance"></property>
+        <property name="deptId" value="10"></property>
+    </bean>
+
+    <bean id="employeeBean" class="com.mycompany.app.Employee">
+        <property name="name" value="Srini"></property>
+        <property name="email" value="kpsvas@gmail.com"></property>
+        <property name="department" ref="deptBean"></property>
+    </bean>
+
+    <bean id="companyBean" class="com.mycompany.app.Company">
+        <property name="name" value="SRRIT"></property>
+        <property name="employee" ref="employeeBean"></property>
+        <property name="department" ref="deptBean"></property>
+    </bean>
+
+</beans>
